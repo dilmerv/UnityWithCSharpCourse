@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace LoopsFeatures
+﻿namespace LoopsFeatures
 {
     internal class Program
     {
