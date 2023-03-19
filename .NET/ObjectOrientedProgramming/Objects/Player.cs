@@ -1,9 +1,9 @@
-﻿namespace ObjectOrientedProgramming.Objects
-{
-    public class Player
-    {
-        private User user;
+﻿using ObjectOrientedProgramming.Interfaces;
 
+namespace ObjectOrientedProgramming.Objects
+{
+    public class Player : User, IPlayer
+    {
         private string email;
 
         private string firstName;
@@ -12,13 +12,7 @@
 
         private Vector3 position = new Vector3(0, 0, 0);
 
-        public int UserId
-        {
-            get
-            {
-                return user.Id;
-            }
-        }
+        private string hiddenInfo;
 
         public string FullName
         {
@@ -36,19 +30,19 @@
             }
         }
 
-        public Player(int id, string email) 
+        public Player(int id, string email) : base(id)
         {
-            user = new User(id);
             this.email = email;
+            hiddenInfo = this.socialSecurity;
         }
 
         public Player(int id, string email, string firstName,
-            string lastName)
+            string lastName) : base(id)
         {
-            user = new User(id);
             this.email = email;
             this.firstName = firstName;
             this.lastName = lastName;
+            hiddenInfo = this.socialSecurity;
         }
 
         private string GetFirstNameWithFirstCharacterOfLast()
@@ -66,9 +60,15 @@
         }
 
         public bool MovePlayer(Vector3 newPosition)
-        { 
+        {
+            Console.WriteLine("Move player from normal player");
             position = newPosition;
             return true;
+        }
+
+        public override void WhoAmI()
+        {
+            Console.WriteLine($"I am an user with email: {email}");
         }
     }
 }
