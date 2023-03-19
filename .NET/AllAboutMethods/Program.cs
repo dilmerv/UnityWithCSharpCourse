@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace AllAboutMethods
+﻿namespace AllAboutMethods
 {
     internal class Program
     {
