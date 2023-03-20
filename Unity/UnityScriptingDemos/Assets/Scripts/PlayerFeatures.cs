@@ -1,4 +1,5 @@
 using Assets.Scripts.Types;
+using System;
 using UnityEngine;
 
 public class PlayerFeatures : MonoBehaviour
@@ -13,20 +14,21 @@ public class PlayerFeatures : MonoBehaviour
     [SerializeField]
     private Player player;
 
+    void Awake()
+    {
+        
+    }
+
     void OnEnable()
     {
         Debug.Log("Player Features Enabled");
     }
 
-    void DisplayPlayerInfo()
+    void Reset()
     {
-        Logger.Instance.LogInfo($"Id: {player.Id}");
-        Logger.Instance.LogInfo($"First Name: {player.FirstName}");
-        Logger.Instance.LogInfo($"Last Name: {player.LastName}");
-        Logger.Instance.LogInfo($"Country Allowed: {player.CountryAllowed}");
+
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Player Features Started");
@@ -49,5 +51,23 @@ public class PlayerFeatures : MonoBehaviour
     void Update()
     {
         // Debug.Log($"Update was called: {Time.deltaTime}");
+    }
+
+    private void LateUpdate()
+    {
+        
+    }
+
+    void FixedUpdate()
+    {
+        
+    }
+
+    void DisplayPlayerInfo()
+    {
+        Logger.Instance.LogInfo($"Id: {player.Id}");
+        Logger.Instance.LogInfo($"First Name: {player.FirstName}");
+        Logger.Instance.LogInfo($"Last Name: {player.LastName}");
+        Logger.Instance.LogInfo($"Country Allowed: {player.CountryAllowed}");
     }
 }
