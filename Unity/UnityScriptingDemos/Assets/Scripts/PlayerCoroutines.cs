@@ -1,4 +1,6 @@
 using Assets.Scripts.Events;
+using StarterAssets;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -42,6 +44,18 @@ public class PlayerCoroutines : MonoBehaviour
     {
         Logger.Instance.LogInfo($"Enemy: {enemyName} " +
                         $"is closed by {distance}");
+
+        GameObject enemy = GameObject.Find(enemyName);
+        Renderer renderer = enemy.GetComponent<Renderer>();
+        renderer.material.color = Color.yellow;
+
+        PlayerFeatures playerFeatures = FindObjectOfType<PlayerFeatures>();
+        Debug.Log($"PlayerFeatures was loaded: {playerFeatures.PlayerName}");
+
+        ThirdPersonController controller = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<ThirdPersonController>();
+
+        //controller.MoveSpeed = 0.5f;
     }
 
     IEnumerator CheckForEnemies()

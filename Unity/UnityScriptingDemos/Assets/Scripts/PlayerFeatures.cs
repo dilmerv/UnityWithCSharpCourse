@@ -14,6 +14,8 @@ public class PlayerFeatures : MonoBehaviour
     [SerializeField]
     private Player player;
 
+    public string PlayerName { get { return player.FirstName; } }
+
     void Awake()
     {
         
