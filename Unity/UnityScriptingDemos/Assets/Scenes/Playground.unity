@@ -825,6 +825,12 @@ MonoBehaviour:
   - {fileID: 1148643653}
   frequency: 0.1
   minDistanceFromEnemy: 3
+  onEnemyCloseToPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnemyCloseToPlayerProvideInfo:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1221041499
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
+using Assets.Scripts.Events;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCoroutines : MonoBehaviour
 {
@@ -15,9 +17,31 @@ public class PlayerCoroutines : MonoBehaviour
     [SerializeField]
     private float minDistanceFromEnemy = 1.0f;
 
+    [SerializeField]
+    private UnityEvent onEnemyCloseToPlayer;
+
+    [SerializeField]
+    private UnityEventForEnemyCloseBy onEnemyCloseToPlayerProvideInfo;
+
     void Start()
     {
         StartCoroutine(CheckForEnemies());
+        onEnemyCloseToPlayer.AddListener(() 
+            => PlayerIsCloseToEnemy());
+
+        onEnemyCloseToPlayerProvideInfo.AddListener((enemyName, distance) 
+            => PlayerIsCloseToEnemy(enemyName, distance));
+    }
+
+    void PlayerIsCloseToEnemy()
+    {
+        Logger.Instance.LogInfo("Enemy is close to the player");
+    }
+
+    void PlayerIsCloseToEnemy(string enemyName, float distance)
+    {
+        Logger.Instance.LogInfo($"Enemy: {enemyName} " +
+                        $"is closed by {distance}");
     }
 
     IEnumerator CheckForEnemies()
@@ -33,9 +57,10 @@ public class PlayerCoroutines : MonoBehaviour
                 var distance = Vector3.Distance(playerPosition, enemyPosition);
 
                 if (distance <= minDistanceFromEnemy)
-                { 
-                    Logger.Instance.LogInfo($"Enemy: {enemy.name} " +
-                        $"is closed by {distance}");
+                {
+                    onEnemyCloseToPlayer?.Invoke();
+
+                    onEnemyCloseToPlayerProvideInfo?.Invoke(enemy.name, distance);
                 }
             }
 
