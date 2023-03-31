@@ -1,45 +1,23 @@
 # Unity With CSharp Course
-Unity With C# course supplemental source code examples
+Unity With C# course supplemental source code examples from course taught on [Learn XR](https://www.learnxr.io) which will be key to understanding C# prior to getting into XR development.
 
 💡 What is included in this repo? 
 * Includes Unity and .NET Console projects demonstrated with [Learn XR C# Fundamentals With Unity Course](https://www.learnxr.io/c-programming-fundamentals-with-unity)
 
-📚 Topic References:
+📚 .NET w/ C# Examples Included:
+* [AllAboutMethods](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/AllAboutMethods)
+* [CollectionFeatures](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/CollectionFeatures)
+* [ConsoleFeatures](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/ConsoleFeatures)
+* [DeclaringVariablesAndMore](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/DeclaringVariablesAndMore)
+* [HelloWorldConsole](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/HelloWorldConsole)
+* [IfElseSwitchStatements](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/IfElseSwitchStatements)
+* [LoopsFeatures](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/LoopsFeatures)
+* [ObjectOrientedProgramming](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/ObjectOrientedProgramming)
+* [Operators](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/Operators)
+* [ParsingAndCasting](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/ParsingAndCasting)
+* [StringFeatures](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/StringFeatures)
+* [UsingExtensionFeatures](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/.NET/UsingExtensionFeatures)
 
-* Single dimensional arrays:
-    ```csharp
-    int[] array = new int[4];
-    array[0] = 1;
-    array[1] = 2;
-    array[2] = 3;
-    array[3] = 4;
-
-    int[] secondArray = new int[] { 2, 4, 8, 16 };
-    ```
-        *Visual representation of one dimensional arrays:*
-        |Index| Value|
-        |-----|------|
-        |  0  |  2   |
-        |  1  |  4   |
-        |  2  |  8   |
-        |  3  |  16  |
-
-* Two dimensional arrays:
-
-
-    ```csharp
-    //[rows, columns]
-    int[,] array = new int[3,3];
-    array[0, 0] = 1;
-    array[0, 1] = 5;
-
-    int[,] secondArray = {{ 1, 2, 3}, {3, 4, 5}};
-    Console.WriteLine(secondArray[0, 0]); //outputs 1
-    Console.WriteLine(secondArray[1, 1]); //outputs 4
-    Console.WriteLine(secondArray[1, 2]); //outputs 5
-```
-    *Visual representation of two dimensional arrays:*
-    |     |Column 0|Column 1|Column 2|
-    |-----|--------|--------|--------|
-    |Row 0|1       |2       |3       |
-    |Row 1|3       |4       |5       |
+📚 Unity w/ C# Examples Included:
+* [HelloWorld](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/Unity/HelloWorld)
+* [UnityScriptingDemos](https://github.com/dilmerv/UnityWithCSharpCourse/tree/master/Unity/UnityScriptingDemos)
